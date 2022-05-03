@@ -11,7 +11,7 @@ async function main() {
 
   // Deploy Counter
   const Counter = await hre.ethers.getContractFactory("Counter");
-  const counter = await Counter.deploy();
+  const counter = await Counter.deploy(0);
   
   // console.log
 	console.log("Greeter deployed to:", greeter.address);
