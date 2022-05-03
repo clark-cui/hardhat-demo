@@ -4,6 +4,8 @@ coverage
 coverage.json
 typechain
 
+.api_key
+.mnemonic
 #Hardhat files
 cache
 artifacts

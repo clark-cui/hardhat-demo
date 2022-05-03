@@ -1,3 +1,6 @@
+const fs = require('fs');
+const api_key = fs.readFileSync('.api_key').toString().trim();
+const mnemonic = fs.readFileSync('.mnemonic').toString().trim();
 require("@nomiclabs/hardhat-waffle");
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -17,5 +20,17 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: "0.8.4",
+  solidity: "0.8.9",
+  networks: {
+    development: {
+      url: "http://127.0.0.1:8545",
+      chainId: 31337
+    },
+    goerli: {
+      url: `https://goerli.infura.io/v3/${api_key}`,
+      accounts: {
+        mnemonic: mnemonic,
+      }
+    }
+  }
 };
