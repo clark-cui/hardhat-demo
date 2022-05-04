@@ -1,5 +1,4 @@
 const {ethers,network,artifacts} = require("hardhat");
-const {writeAbiAddr}=require("./artifact_saver.js");
 
 const params=process.argv;
 const value=params[2];
@@ -11,8 +10,6 @@ async function main() {
 
   await counter.deployed();
   console.log("Counter deployed to:", counter.address);
-
-  // let Artifact =await artifacts.readArtifact("Counter");
 
 }
 main()
