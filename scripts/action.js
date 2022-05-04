@@ -1,15 +1,18 @@
-const fs = require('fs');
-const abiFile = JSON.parse(fs.readFileSync('./abi/Counter.json'))
-const Web3 = require("web3");
-// 创建web3对象
-const web3 = new Web3();
-// 连接到以太坊节点
-web3.setProvider(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
+const {
+  ethers
+} = require("hardhat")
+const CounterArtifact = require("../data/Counter.json")
+const contractAddress = require("../data/contract-address.json");
 
-const abi = abiFile
-// 合约地址
-const address = "0xb2cdd356e58280906ce53e1665697b50f88aac56";
-// 通过ABI和地址获取已部署的合约对象
-const counter = web3.eth.contract(abi).at(address);
-const balance = counter.getBalance;
-console.log(" balance: ", balance);
+// init
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+// Then, we initialize the contract using that provider and the token's
+// artifact. You can do this same thing with your contracts.
+const counter = new ethers.Contract(
+  contractAddress.Counter,
+  CounterArtifact.abi,
+  provider.getSigner(0)
+);
+
+console.log("counter值是：", counter.counter())
