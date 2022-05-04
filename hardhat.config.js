@@ -1,6 +1,7 @@
 const fs = require('fs');
 const api_key = fs.readFileSync('.api_key').toString().trim();
 const mnemonic = fs.readFileSync('.mnemonic').toString().trim();
+require("@nomiclabs/hardhat-waffle");
 require("hardhat-abi-exporter")
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
