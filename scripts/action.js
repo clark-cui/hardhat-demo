@@ -16,3 +16,6 @@ const counter = new ethers.Contract(
 );
 
 console.log("counter值是：", counter.counter())
+
+await counter.count();
+console.log("counter值是：", counter.counter())
