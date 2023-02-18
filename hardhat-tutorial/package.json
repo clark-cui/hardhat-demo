@@ -4,12 +4,32 @@
   "description": "https://hardhat.org/tutorial/creating-a-new-hardhat-project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "hardhat compile",
+    "test":"hardhat test"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^2.0.1",
-    "hardhat": "^2.12.7"
+    "@ethersproject/abi": "*",
+    "@ethersproject/bytes": "*",
+    "@ethersproject/providers": "*",
+    "@nomicfoundation/hardhat-chai-matchers": "*",
+    "@nomicfoundation/hardhat-network-helpers": "*",
+    "@nomicfoundation/hardhat-toolbox": "*",
+    "@nomiclabs/hardhat-ethers": "*",
+    "@nomiclabs/hardhat-etherscan": "*",
+    "@typechain/ethers-v5": "*",
+    "@typechain/hardhat": "*",
+    "@types/chai": "*",
+    "@types/mocha": "*",
+    "@types/node": "*",
+    "chai": "*",
+    "ethers": "*",
+    "hardhat": "*",
+    "hardhat-gas-reporter": "*",
+    "solidity-coverage": "*",
+    "ts-node": "*",
+    "typechain": "*",
+    "typescript": "*"
   }
 }
