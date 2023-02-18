@@ -59,13 +59,62 @@ importers:
       typechain: 8.1.1_typescript@4.9.5
       typescript: 4.9.5
 
-  hardhat-tutorial:
+  packages/hardhat-tutorial:
     specifiers:
+      '@ethersproject/abi': '*'
+      '@ethersproject/bytes': '*'
+      '@ethersproject/providers': '*'
+      '@nomicfoundation/hardhat-chai-matchers': '*'
+      '@nomicfoundation/hardhat-network-helpers': '*'
       '@nomicfoundation/hardhat-toolbox': '*'
+      '@nomiclabs/hardhat-ethers': '*'
+      '@nomiclabs/hardhat-etherscan': '*'
+      '@openzeppelin/contracts': '*'
+      '@typechain/ethers-v5': '*'
+      '@typechain/hardhat': '*'
+      '@types/chai': '*'
+      '@types/mocha': '*'
+      '@types/node': '*'
+      chai: '*'
+      dotenv: '*'
+      envfile: '*'
+      ethers: '*'
       hardhat: '*'
+      hardhat-deploy: '*'
+      hardhat-gas-reporter: '*'
+      qrcode: '*'
+      solidity-coverage: '*'
+      ts-node: '*'
+      typechain: '*'
+      typescript: '*'
+    dependencies:
+      '@openzeppelin/contracts': 4.8.1
+      dotenv: 16.0.3
+      envfile: 6.18.0
+      qrcode: 1.5.1
     devDependencies:
-      '@nomicfoundation/hardhat-toolbox': 2.0.1_hardhat@2.12.7
-      hardhat: 2.12.7
+      '@ethersproject/abi': 5.7.0
+      '@ethersproject/bytes': 5.7.0
+      '@ethersproject/providers': 5.7.2
+      '@nomicfoundation/hardhat-chai-matchers': 1.0.6_5h2wsktwjis7lmzn2zb7mgvahm
+      '@nomicfoundation/hardhat-network-helpers': 1.0.8_hardhat@2.12.7
+      '@nomicfoundation/hardhat-toolbox': 2.0.1_sckdmh5iir733zqogf4a3dblb4
+      '@nomiclabs/hardhat-ethers': 2.2.2_4tzilew2vuitdwerzusliplz24
+      '@nomiclabs/hardhat-etherscan': 3.1.6_hardhat@2.12.7
+      '@typechain/ethers-v5': 10.2.0_kuvqdvnhbslgxdpi2awxjzdvhe
+      '@typechain/hardhat': 6.1.5_oiikrsglaityxahgeoev6t5lpu
+      '@types/chai': 4.3.4
+      '@types/mocha': 10.0.1
+      '@types/node': 18.14.0
+      chai: 4.3.7
+      ethers: 5.7.2
+      hardhat: 2.12.7_6qtx7vkbdhwvdm4crzlegk4mvi
+      hardhat-deploy: 0.11.23
+      hardhat-gas-reporter: 1.0.9_hardhat@2.12.7
+      solidity-coverage: 0.8.2_hardhat@2.12.7
+      ts-node: 10.9.1_tncu2ai53lzgmizdedur7lbibe
+      typechain: 8.1.1_typescript@4.9.5
+      typescript: 4.9.5
 
 packages:
 
@@ -629,32 +678,6 @@ packages:
     dependencies:
       ethereumjs-util: 7.1.5
       hardhat: 2.12.7_6qtx7vkbdhwvdm4crzlegk4mvi
-    dev: true
-
-  /@nomicfoundation/hardhat-toolbox/2.0.1_hardhat@2.12.7:
-    resolution: {integrity: sha512-/pr8m9xlqiNlq6fXv4hEPNwdNwUhysoB2qbDCKqERfPpq34EydUQTC3Vis4aIea8RLwSrU8sDXFdv4TQxYstKw==}
-    peerDependencies:
-      '@ethersproject/abi': ^5.4.7
-      '@ethersproject/providers': ^5.4.7
-      '@nomicfoundation/hardhat-chai-matchers': ^1.0.0
-      '@nomicfoundation/hardhat-network-helpers': ^1.0.0
-      '@nomiclabs/hardhat-ethers': ^2.0.0
-      '@nomiclabs/hardhat-etherscan': ^3.0.0
-      '@typechain/ethers-v5': ^10.1.0
-      '@typechain/hardhat': ^6.1.2
-      '@types/chai': ^4.2.0
-      '@types/mocha': '>=9.1.0'
-      '@types/node': '>=12.0.0'
-      chai: ^4.2.0
-      ethers: ^5.4.7
-      hardhat: ^2.11.0
-      hardhat-gas-reporter: ^1.0.8
-      solidity-coverage: ^0.8.1
-      ts-node: '>=8.0.0'
-      typechain: ^8.1.0
-      typescript: '>=4.5.0'
-    dependencies:
-      hardhat: 2.12.7
     dev: true
 
   /@nomicfoundation/hardhat-toolbox/2.0.1_sckdmh5iir733zqogf4a3dblb4:
@@ -2714,75 +2737,6 @@ packages:
       sha1: 1.1.1
     transitivePeerDependencies:
       - '@codechecks/client'
-    dev: true
-
-  /hardhat/2.12.7:
-    resolution: {integrity: sha512-voWoN6zn5d8BOEaczSyK/1PyfdeOeI3SbGCFb36yCHTJUt6OIqLb+ZDX30VhA1UsYKzLqG7UnWl3fKJUuANc6A==}
-    engines: {node: ^14.0.0 || ^16.0.0 || ^18.0.0}
-    hasBin: true
-    peerDependencies:
-      ts-node: '*'
-      typescript: '*'
-    peerDependenciesMeta:
-      ts-node:
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@ethersproject/abi': 5.7.0
-      '@metamask/eth-sig-util': 4.0.1
-      '@nomicfoundation/ethereumjs-block': 4.0.0
-      '@nomicfoundation/ethereumjs-blockchain': 6.0.0
-      '@nomicfoundation/ethereumjs-common': 3.0.0
-      '@nomicfoundation/ethereumjs-evm': 1.0.0
-      '@nomicfoundation/ethereumjs-rlp': 4.0.0
-      '@nomicfoundation/ethereumjs-statemanager': 1.0.0
-      '@nomicfoundation/ethereumjs-trie': 5.0.0
-      '@nomicfoundation/ethereumjs-tx': 4.0.0
-      '@nomicfoundation/ethereumjs-util': 8.0.0
-      '@nomicfoundation/ethereumjs-vm': 6.0.0
-      '@nomicfoundation/solidity-analyzer': 0.1.0
-      '@sentry/node': 5.30.0
-      '@types/bn.js': 5.1.1
-      '@types/lru-cache': 5.1.1
-      abort-controller: 3.0.0
-      adm-zip: 0.4.16
-      aggregate-error: 3.1.0
-      ansi-escapes: 4.3.2
-      chalk: 2.4.2
-      chokidar: 3.5.3
-      ci-info: 2.0.0
-      debug: 4.3.4
-      enquirer: 2.3.6
-      env-paths: 2.2.1
-      ethereum-cryptography: 1.2.0
-      ethereumjs-abi: 0.6.8
-      find-up: 2.1.0
-      fp-ts: 1.19.3
-      fs-extra: 7.0.1
-      glob: 7.2.0
-      immutable: 4.2.4
-      io-ts: 1.10.4
-      keccak: 3.0.3
-      lodash: 4.17.21
-      mnemonist: 0.38.5
-      mocha: 10.2.0
-      p-map: 4.0.0
-      qs: 6.11.0
-      raw-body: 2.5.1
-      resolve: 1.17.0
-      semver: 6.3.0
-      solc: 0.7.3_debug@4.3.4
-      source-map-support: 0.5.21
-      stacktrace-parser: 0.1.10
-      tsort: 0.0.1
-      undici: 5.20.0
-      uuid: 8.3.2
-      ws: 7.5.9
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
     dev: true
 
   /hardhat/2.12.7_6qtx7vkbdhwvdm4crzlegk4mvi:
