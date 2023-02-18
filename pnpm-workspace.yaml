@@ -1,4 +1,4 @@
 # pnpm-workspace.yaml
 packages:
   # all packages in subdirs of components/
-  - "hardhat-tutorial/**"
+  - "packages/**"

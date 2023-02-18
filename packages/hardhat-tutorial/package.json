@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "hardhat compile",
-    "test":"hardhat test"
+    "test":"hardhat test --network hardhat" 
   },
   "author": "",
   "license": "ISC",
@@ -27,9 +27,16 @@
     "ethers": "*",
     "hardhat": "*",
     "hardhat-gas-reporter": "*",
+    "hardhat-deploy": "*",
     "solidity-coverage": "*",
     "ts-node": "*",
     "typechain": "*",
     "typescript": "*"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "*",
+    "dotenv": "*",
+    "envfile": "*",
+    "qrcode": "*"
   }
 }
